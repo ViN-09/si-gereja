@@ -1,0 +1,130 @@
+:root {
+    --primary-bg: whitesmoke;
+    --accent-color: #f35525;
+    --font-main: 'Outfit', sans-serif;
+  }
+
+  body {
+    background-color: var(--primary-bg);
+    font-family: var(--font-main);
+    color: #222;
+  }
+
+  .text-accent {
+    color: var(--accent-color);
+  }
+
+  .sidebar {
+    height: 100vh;
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .sidebar .nav-link {
+    color: #333;
+    transition: 0.3s;
+  }
+
+  .sidebar .nav-link.active,
+  .sidebar .nav-link:hover {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .card-glow {
+    background: #fff;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(243, 85, 37, 0.1);
+  }
+
+  .animate-fade {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .chart-placeholder {
+    height: 300px;
+    background: linear-gradient(to right, #f3552510, #f3552505);
+    border-radius: 12px;
+  }
+
+  .table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .head_dashboard{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #dasboard-side-close{
+    display: none;
+  }
+
+  @media (max-width: 767.98px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      z-index: 1050;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    #sidebarToggle {
+      /* position: fixed;
+      top: 15px;
+      left: 15px; */
+      z-index: 1;
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    h4{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #dasboard-side-close{
+        background-color: #fff;
+        font-size: 11px;
+        color: #f35525;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: max-content;
+    }
+  }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuristic Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="frontend/dasboard.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar Toggle Button -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-2 d-md-block sidebar shadow-sm">
+        <div class="sidebar-sticky p-4">
+          <h4 class="text-accent fw-bold mb-4">MyDash<button id="dasboard-side-close" class="">x</button></h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a class="nav-link active" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link" href="#">Reports</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link" href="#">Users</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main -->
+      <main class="col-md-10 ms-sm-auto px-md-4">
+        <!-- <div class="d-flex justify-content-between flex-wrap align-items-center pt-4 pb-2 border-bottom"> -->
+        <div class="head_dashboard">
+            <button id="sidebarToggle" class="d-md-none">≡</button>
+          <h2 class="fw-bold text-dark">Dashboard Overview</h2>
+        </div>
+
+        <!-- Cards -->
+        <div class="row my-4 animate-fade">
+          <div class="col-md-3 mb-3">
+            <div class="card card-glow border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Visitors</h5>
+                <p class="fw-bold fs-3">1,250</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card card-glow border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Revenue</h5>
+                <p class="fw-bold fs-3">$9,230</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card card-glow border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Orders</h5>
+                <p class="fw-bold fs-3">305</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card card-glow border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Active Users</h5>
+                <p class="fw-bold fs-3">1,050</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart Placeholder -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h5 class="fw-bold mb-3">Traffic Overview</h5>
+            <div class="chart-placeholder mb-3"></div>
+          </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="row">
+          <div class="col-md-12">
+            <h5 class="fw-bold mb-3">Latest Transactions</h5>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="table-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>2025-07-10</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td>$123.00</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>2025-07-09</td>
+                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    <td>$256.00</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Alan Walker</td>
+                    <td>2025-07-08</td>
+                    <td><span class="badge bg-danger">Failed</span></td>
+                    <td>$89.99</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+      document.getElementById('sidebar').classList.toggle('show');
+    });
+
+    document.getElementById('dasboard-side-close').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.remove('show');
+    document.getElementById('sidebarToggle').style.display = 'flex';
+  });
+  </script>
+</body>
+</html>
